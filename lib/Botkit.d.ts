@@ -7,6 +7,7 @@ declare namespace botkit {
   function webexbot(configuration: WebexConfiguration): WebexController;
   function twilioipmbot(configuration: TwilioIPMConfiguration): TwilioIPMController;
   function twiliosmsbot(configuration: TwilioSMSConfiguration): TwilioSMSController;
+  function twiliowhatsappbot(configuration: TwilioWhatsAppConfiguration): TwilioWhatsAppController;
   function botframeworkbot(configuration: BotFrameworkConfiguration): BotFrameworkController;
   function teamsbot(configuration: TeamsConfiguration): TeamsController;
   function consolebot(configuration: ConsoleConfiguration): ConsoleController;
@@ -614,6 +615,20 @@ declare namespace botkit {
   interface TwilioSMSMessage extends Message {
   }
   interface TwilioSMSSpawnConfiguration {
+  }
+  interface TwilioWhatsAppBot extends Bot<TwilioWhatsAppSpawnConfiguration, TwilioWhatsAppMessage> {
+  }
+  interface TwilioWhatsAppConfiguration extends Configuration {
+    account_sid: string;
+    auth_token: string;
+    twilio_number: string;
+  }
+  interface TwilioWhatsAppController extends Controller<TwilioWhatsAppSpawnConfiguration, TwilioWhatsAppMessage, TwilioWhatsAppBot> {
+    createWebhookEndpoints(webserver: any, bot: TwilioWhatsAppBot, cb?: () => void): this;
+  }
+  interface TwilioWhatsAppMessage extends Message {
+  }
+  interface TwilioWhatsAppSpawnConfiguration {
   }
   interface WebBot extends Bot<WebSpawnConfiguration, WebMessage> {
     connected: boolean;

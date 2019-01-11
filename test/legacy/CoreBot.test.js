@@ -7,6 +7,7 @@ jest.mock('../lib/SlackBot', () => 'slackbot');
 jest.mock('../lib/Facebook', () => 'facebook');
 jest.mock('../lib/TwilioIPMBot', () => 'twilioipm');
 jest.mock('../lib/TwilioSMSBot', () => 'twiliosms');
+jest.mock('../lib/TwilioWhatsAppBot', () => 'twiliowhatsapp');
 jest.mock('../lib/BotFramework', () => 'botframework');
 jest.mock('../lib/WebexBot', () => 'webex');
 jest.mock('../lib/ConsoleBot', () => 'console');

@@ -7,6 +7,7 @@ jest.mock('../lib/SlackBot', () => 'slackbot');
 jest.mock('../lib/Facebook', () => 'facebook');
 jest.mock('../lib/TwilioIPMBot', () => 'twilioipm');
 jest.mock('../lib/TwilioSMSBot', () => 'twiliosms');
+jest.mock('../lib/TwilioWhatsAppBot', () => 'twiliowhatsapp');
 jest.mock('../lib/BotFramework', () => 'botframework');
 jest.mock('../lib/WebexBot', () => 'webex');
 jest.mock('../lib/ConsoleBot', () => 'console');
@@ -22,6 +23,7 @@ describe('Botkit', () => {
         expect(botkit.facebookbot).toBe('facebook');
         expect(botkit.twilioipmbot).toBe('twilioipm');
         expect(botkit.twiliosmsbot).toBe('twiliosms');
+        expect(botkit.twiliowhatsappbot).toBe('twiliowhatsapp');
         expect(botkit.botframeworkbot).toBe('botframework');
         expect(botkit.webexbot).toBe('webex');
         expect(botkit.teamsbot).toBe('teams');
